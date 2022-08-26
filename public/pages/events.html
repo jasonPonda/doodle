@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/2.The-Hill/doodle/public/styles/style.css">
+    <script defer src="/2.The-Hill/doodle/public/index.js"></script>
+    <title>Doodle</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <form autocomplete="off" onsubmit="onFormSubmit()" class="form-horizontal">
+                    <fieldset>
+
+                        <!-- Form Name -->
+                        <legend>ADD an event</legend>
+
+                        <!-- Text input-->
+                        <div class="control-group">
+                            <div class="controls">
+                                <label class="label" for="textinput">Name event</label>
+                                <input class="eventName" name="eventName" type="text" placeholder="Name of the event"
+                                     />
+                                <label class="label" for="textarea">Describe event</label>
+                                <div class="controls">
+                                    <textarea id="textarea" name="textarea" placeholder="Describe event" class="DescribeEvent"></textarea>
+                                </div>
+                                <label class="label" for="textinput">Author</label>
+                                <input class="Author" type="text" name="author" placeholder="Enter a your name">
+                                <label class="label" for="textinput">Date début</label>
+                                <input type="datetime-local" name="date" id="DateDébut" />
+                                <label class="label" for="textinput">Date fin</label>
+                                <input type="datetime-local" name="date" id="DateFin" />
+                            </div>
+                        </div>
+
+                        <!-- Button (Double) -->
+                        <div class="group">
+                            <div class="controls">
+                                <input type="submit" value="add">
+                                <input type="reset" value="reset">
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="storeList">
+                    <thead>
+                        <tr>
+                            <th>Name event</th>
+                            <th>Describe event</th>
+                            <th>Author</th>
+                            <th>Date début</th>
+                            <th>Date fin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Here a loader is created which 
+             loads till response comes -->
+             <div class="d-flex justify-content-center">
+                <div class="spinner-border" 
+                     role="status" id="loading">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+            <h1>Registered event</h1>
+            <!-- table for showing data -->
+            <table id="event"></table>
+
+
+</body>
+
+</html>
